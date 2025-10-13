@@ -1,0 +1,25 @@
+---
+tests:
+  - name: basic_test
+    description: "Basic firmware execution and connectivity test"
+    timeout: 600
+    
+  - name: spi0_test
+    description: "SPI0 peripheral integration test at 0x3000_0000"
+    timeout: 600
+    
+  - name: spi1_test
+    description: "SPI1 peripheral integration test at 0x3001_0000"
+    timeout: 600
+    
+  - name: i2c_test
+    description: "I2C controller integration test at 0x3002_0000"
+    timeout: 600
+    
+  - name: gpio_test
+    description: "GPIO with edge-detect interrupt test at 0x3003_0000"
+    timeout: 600
+    
+  - name: system_integration_test
+    description: "Comprehensive multi-peripheral system integration test"
+    timeout: 600

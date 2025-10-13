@@ -1,0 +1,6 @@
+command:cd /workspace/verilog/dv/cocotb/sim/mp_test/RTL-compilation &&iverilog -g2012 -Ttyp  -DUSE_POWER_PINS -DUNIT_DELAY=#1 -DCOCOTB_SIM -DFUNCTIONAL -DWAVE_GEN -DIVERILOG -Dsky130 -DCPU_TYPE_VexRISC -DRUN_PATH=\"/workspace/verilog/dv/cocotb\" -DTAG=\"mp_test\" -DMCW_ROOT=\"/nc/templates/mgmt_core_wrapper\" -DUSER_PROJECT_ROOT=\"/workspace\" -DCARAVEL_ROOT=\"/nc/templates/caravel\" -DSIM_PATH=\"/workspace/verilog/dv/cocotb/sim/\" -DSIM=\"RTL\" -DTESTNAME=\"basic_test\" -DFTESTNAME=\"RTL-basic_test\" -DSIM_DIR=\"/workspace/verilog/dv/cocotb/sim/mp_test\" -DCORNER_nom  -I /workspace/verilog/rtl -o /workspace/verilog/dv/cocotb/sim/mp_test/RTL-compilation/sim.vvp -s caravel_top /nc/templates/caravel/verilog/rtl/toplevel_cocotb.v
+
+./includes.v:11: Include file /workspace/verilog/../ip/EF_I2C/hdl/rtl/EF_I2C.v not found
+error: Unable to find the root module "caravel_top" in the Verilog source.
+     : Perhaps ``-s caravel_top'' is incorrect?
+1 error(s) during elaboration.

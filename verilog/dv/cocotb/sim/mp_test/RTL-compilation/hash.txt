@@ -1,0 +1,1 @@
+File not found: /workspace/verilog/../ip/EF_I2C/hdl/rtl/EF_I2C.v
