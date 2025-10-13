@@ -22,6 +22,7 @@
 -v $(USER_PROJECT_VERILOG)/../ip/EF_IP_UTIL/hdl/ef_util_lib.v
 
 # CF_SPI IP
+-v $(USER_PROJECT_VERILOG)/../ip/CF_SPI/hdl/rtl/spi_master.v
 -v $(USER_PROJECT_VERILOG)/../ip/CF_SPI/hdl/rtl/CF_SPI.v
 -v $(USER_PROJECT_VERILOG)/../ip/CF_SPI/hdl/rtl/bus_wrappers/CF_SPI_WB.v
 
