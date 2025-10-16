@@ -1,7 +1,7 @@
 # 🚀 Caravel Multi-Peripheral SoC - Project Dashboard
 
-**Last Updated:** 2025-10-16  
-**Project Status:** 🟡 RTL Integration Complete - Verification & Hardening Pending
+**Last Updated:** 2025-10-16 (Status Check)  
+**Project Status:** 🟡 RTL Complete - Verification Attempted, Physical Design Pending
 
 ---
 
@@ -22,23 +22,23 @@ A custom Caravel user project integrating multiple communication peripherals (2�
 | **SoC Platform** | Efabless Caravel | ✅ Template Applied |
 | **PDK** | Google/Skywater 130nm | sky130A |
 | **Bus Protocol** | Wishbone B4 | ✅ Implemented |
-| **SPI IP** | CF_SPI (NativeChips) | v2.0.1 ✅ |
-| **I2C IP** | EF_I2C (NativeChips) | v1.1.0 ✅ |
-| **GPIO IP** | EF_GPIO8 (NativeChips) | v1.1.0 ✅ |
-| **Synthesis** | OpenLane/LibreLane | ⚠️ Not Run |
-| **Verification** | Cocotb + Caravel-Cocotb | ⚠️ Partial |
-| **Language** | Verilog/SystemVerilog | ✅ |
+| **SPI IP** | CF_SPI (NativeChips) | v2.0.1 ✅ Linked |
+| **I2C IP** | EF_I2C (NativeChips) | v1.1.0 ✅ Linked |
+| **GPIO IP** | EF_GPIO8 (NativeChips) | v1.1.0 ✅ Linked |
+| **Synthesis** | OpenLane/LibreLane | ⚠️ user_proj_example Done, user_project NOT Done |
+| **Verification** | Cocotb + Caravel-Cocotb | ⚠️ Setup Complete, Tests Failed |
+| **Language** | Verilog | ✅ RTL Complete |
 
-### Overall Health Score: **55%** 🟡
+### Overall Health Score: **58%** 🟡
 
 | Category | Score | Status |
 |----------|-------|--------|
-| **RTL Design** | 85% | 🟢 Complete |
-| **Documentation** | 75% | 🟢 Good |
-| **IP Integration** | 90% | 🟢 Complete |
-| **Verification** | 30% | 🔴 Incomplete |
-| **Physical Design** | 0% | 🔴 Not Started |
-| **Signoff** | 0% | 🔴 Not Started |
+| **RTL Design** | 90% | 🟢 Complete |
+| **Documentation** | 95% | 🟢 Excellent |
+| **IP Integration** | 95% | 🟢 Complete |
+| **Verification** | 20% | 🔴 Setup Done, Tests Failed |
+| **Physical Design** | 10% | 🔴 Only Example Done |
+| **Signoff** | 5% | 🔴 Only Example Done |
 
 ---
 
@@ -68,33 +68,36 @@ A custom Caravel user project integrating multiple communication peripherals (2�
 | Document | Status | Completeness | Path |
 |----------|--------|--------------|------|
 | **README.md** | ✅ Complete | 95% | `docs/README.md` |
-| **Register Map** | ✅ Complete | 90% | `docs/register_map.md` |
-| **Pad Map** | ❓ Unknown | ? | `docs/pad_map.md` |
-| **Integration Notes** | ❓ Unknown | ? | `docs/integration_notes.md` |
-| **Verification Plan** | ❓ Unknown | ? | `docs/verification_plan.md` |
+| **Register Map** | ✅ Complete | 95% | `docs/register_map.md` |
+| **Pad Map** | ✅ Complete | 95% | `docs/pad_map.md` |
+| **Integration Notes** | ✅ Complete | 95% | `docs/integration_notes.md` |
+| **Verification Plan** | ✅ Complete | 90% | `docs/verification_plan.md` |
 | **PROJECT_DASHBOARD** | ✅ This file | 100% | `PROJECT_DASHBOARD.md` |
 
 ### Verification Status
 | Test | Status | Location | Notes |
 |------|--------|----------|-------|
-| **basic_test** | ✅ Exists | `verilog/dv/cocotb/basic_test/` | Firmware config test |
-| **spi0_test** | ✅ Exists | `verilog/dv/cocotb/spi0_test/` | Not verified |
-| **spi1_test** | ✅ Exists | `verilog/dv/cocotb/spi1_test/` | Not verified |
-| **i2c_test** | ✅ Exists | `verilog/dv/cocotb/i2c_test/` | Not verified |
-| **gpio_test** | ✅ Exists | `verilog/dv/cocotb/gpio_test/` | Not verified |
-| **system_integration_test** | ✅ Exists | `verilog/dv/cocotb/system_integration_test/` | Not verified |
-| **Interrupt Test** | ❌ Missing | - | GPIO edge-detect needs testing |
-| **Test Runs** | ⚠️ Not Executed | - | No evidence of test runs |
+| **basic_test** | ⚠️ Setup Complete | `verilog/dv/cocotb/basic_test/` | Attempted, failed - sim.vvp not found |
+| **spi0_test** | ⚠️ Setup Complete | `verilog/dv/cocotb/spi0_test/` | Not run yet |
+| **spi1_test** | ⚠️ Setup Complete | `verilog/dv/cocotb/spi1_test/` | Not run yet |
+| **i2c_test** | ⚠️ Setup Complete | `verilog/dv/cocotb/i2c_test/` | Not run yet |
+| **gpio_test** | ⚠️ Setup Complete | `verilog/dv/cocotb/gpio_test/` | Not run yet |
+| **system_integration_test** | ⚠️ Setup Complete | `verilog/dv/cocotb/system_integration_test/` | Not run yet |
+| **Interrupt Test** | ❌ Missing | - | GPIO edge-detect needs dedicated test |
+| **Test Execution** | 🔴 Failed | `sim/mp_test/` | Compilation or path issue |
 
 ### Physical Design Status
 | Task | Status | Notes |
 |------|--------|-------|
-| **user_project Hardening** | ❌ Not Started | Need OpenLane config |
+| **user_proj_example Hardening** | ✅ Complete | Example macro (reference only) |
+| **user_project OpenLane Config** | ❌ Missing | `openlane/user_project/config.json` doesn't exist |
+| **user_project Hardening** | ❌ Not Started | Blocked by missing config |
+| **user_project_wrapper Config** | ⚠️ Partial | Needs MACROS section for user_project |
 | **user_project_wrapper Hardening** | ❌ Not Started | Depends on user_project |
-| **Timing Analysis** | ❌ Not Started | Target: 25ns (40 MHz) |
-| **DRC** | ❌ Not Started | - |
-| **LVS** | ❌ Not Started | - |
-| **Power Planning** | ❌ Not Started | vccd1/vssd1 |
+| **Timing Analysis** | ⚠️ Example Only | Target: 25ns (40 MHz), user_project not done |
+| **DRC** | ⚠️ Example Only | user_proj_example clean, user_project not done |
+| **LVS** | ⚠️ Example Only | user_proj_example clean, user_project not done |
+| **Power Planning** | ⚠️ Example Only | vccd1/vssd1 |
 
 ---
 
